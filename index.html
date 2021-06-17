@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool-House Menu</title>
+</head>
+<body>
+    <nav>
+        <button id="hamburger-bt">
+            <div class='belt'></div>
+        </button>
+    </nav>
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #hamburger-bt {
+        width: 35px;
+        height: 35px;
+        margin: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+    }
+    #hamburger-bt:hover .belt {
+        transform: rotate(90deg);
+    }
+    #hamburger-bt:hover .belt::after {
+        transform: scale(0);
+    }
+    .belt {
+        position: relative;
+
+        width: 80%;
+        height: 2px;
+        background: black;
+        transition: transform .3s ease-in-out;
+    }
+    .belt::after, .belt::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+
+        height: 2px;
+        background: black;
+
+        top: -6px;
+        left: 0;
+
+        transition: transform .3s ease-in-out;
+    }
+
+    .belt::before {
+        top: 6px;
+        width: 65%;
+    }
+
+</style>
+
+</html>
